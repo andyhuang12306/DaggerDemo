@@ -1,0 +1,19 @@
+for Dagger Provide, the only thing you need to know is when we need to provide.
+
+Firstly, i will give some explaintation for how Dagger gets the Objects injected.
+Let me give an example:
+Boss for ProvideTestActivity in our example
+Meal for App
+Assistant for ProvideTestComponent
+Cook hired by Boss to make meal for him here for ProvideTestModule
+TakeOut for Inject Constructor as InjectBean's constructor
+
+now boss wants some meal for launch. Assistant contact Cook if Cook is available then Cook will
+make the meal and provide it to Assistant and Assistant will provide for boss. while if Cook is
+not available then Assistant will contact TakeOut to delivery the meal.
+
+that how Dagger provide the objects needs to be injected.
+
+so the key points is as following:
+1. two way to get injectable objects: Module's Provide and Inject Constructor
+2. the Priority of Module's provide is higher than Inject Constructor's
